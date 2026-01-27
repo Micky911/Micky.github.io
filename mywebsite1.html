@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>朱怀策 - AI产品经理 个人求职网站</title>
+    <!-- 引入Tailwind CSS（CDN方式，无需本地安装） -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome图标（用于导航、按钮等） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- 配置Tailwind自定义主题（颜色、字体） -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36BFFA',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- 自定义工具类（补充Tailwind默认样式） -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .nav-link-active {
+                @apply text-primary border-b-2 border-primary;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+            .resume-item {
+                @apply border-l-4 border-primary pl-4 mb-8 last:mb-0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light font-sans text-dark antialiased">
+    <!-- 1. 导航栏（固定顶部，响应式折叠） -->
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-white/95 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- 网站Logo（个人姓名） -->
+                <a href="#" class="flex items-center space-x-2">
+                    <i class="fa-solid fa-user-circle text-primary text-2xl"></i>
+                    <span class="text-xl font-bold text-dark">朱怀策</span>
+                </a>
+
+                <!-- 桌面端导航链接 -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link-active py-4 font-medium">首页</a>
+                    <a href="#resume" class="py-4 font-medium text-gray-600 hover:text-primary transition-colors">简历详情</a>
+                    <a href="#skills" class="py-4 font-medium text-gray-600 hover:text-primary transition-colors">技能证书</a>
+                    <a href="#profile" class="py-4 font-medium text-gray-600 hover:text-primary transition-colors">个人风采</a>
+                    <a href="#contact" class="py-4 font-medium text-gray-600 hover:text-primary transition-colors">联系我</a>
+                </nav>
+
+                <!-- 桌面端按钮（求职意向突出） -->
+                <div class="hidden md:flex">
+                    <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                        邀约面试
+                    </a>
+                </div>
+
+                <!-- 移动端汉堡菜单按钮 -->
+                <button id="menuBtn" class="md:hidden text-dark hover:text-primary transition-colors">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 移动端折叠导航菜单（默认隐藏） -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-100">
+            <div class="container mx-auto px-4 py-3 space-y-1">
+                <a href="#home" class="block py-3 px-2 rounded-lg bg-primary/5 text-primary font-medium">首页</a>
+                <a href="#resume" class="block py-3 px-2 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors">简历详情</a>
+                <a href="#skills" class="block py-3 px-2 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors">技能证书</a>
+                <a href="#profile" class="block py-3 px-2 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors">个人风采</a>
+                <a href="#contact" class="block py-3 px-2 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors">联系我</a>
+                <a href="#contact" class="block py-3 px-2 rounded-lg bg-primary text-white mt-2">邀约面试</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. 首页（个人简介横幅） -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight mb-4">
+                        朱怀策
+                        <span class="text-primary text-[clamp(1.5rem,3vw,2rem)] block mt-2">求职意向：AI产品经理</span>
+                    </h1>
+                    <p class="text-gray-600 text-lg mb-8 max-w-lg mx-auto md:mx-0">
+                        工科背景 + 3年电商创业经验 + 深耕AI领域2年<br>
+                        具备市场敏感度、产品判断力和团队协作能力，立志深耕AI产品领域10年
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#resume" class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+                            查看完整简历 <i class="fa-solid fa-file-text ml-2"></i>
+                        </a>
+                        <a href="#contact" class="bg-white border border-gray-300 text-dark px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+                            联系我 <i class="fa-solid fa-phone ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://picsum.photos/800/600?random=3" alt="个人形象展示" class="rounded-xl shadow-xl w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 简历详情（教育/实习/工作经历） -->
+    <section id="resume" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">简历详情</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    清晰呈现个人学习、实习与工作经历，展现核心竞争力与成长轨迹
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- 基本信息 -->
+                <div class="bg-white rounded-xl shadow-md p-6 mb-12">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa-solid fa-id-card text-primary mr-3"></i>
+                        基本信息
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-birthday-cake text-primary w-6 text-center mr-2"></i>
+                            <span>生日：2000.05</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-phone text-primary w-6 text-center mr-2"></i>
+                            <span>电话：15100087363</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-location-dot text-primary w-6 text-center mr-2"></i>
+                            <span>现居：河北 邯郸</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-envelope text-primary w-6 text-center mr-2"></i>
+                            <span>邮箱：1983466654@qq.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-weixin text-primary w-6 text-center mr-2"></i>
+                            <span>微信：ZHC15100087363</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 教育背景 -->
+                <div class="mb-12">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa-solid fa-graduation-cap text-primary mr-3"></i>
+                        教育背景
+                    </h3>
+                    <div class="bg-white rounded-xl shadow-md p-6 resume-item">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h4 class="font-bold text-lg">厦门大学嘉庚学院</h4>
+                            <span class="text-gray-500">2018 - 2022</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">自动化 / 本科</p>
+                        <div>
+                            <h5 class="font-medium text-primary mb-2">主修课程</h5>
+                            <p class="text-gray-600 mb-3">数电、模电、自动控制、单片机、PLC等</p>
+                            <h5 class="font-medium text-primary mb-2">选修课程</h5>
+                            <p class="text-gray-600">C、Java、Python等</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 实习经历 -->
+                <div class="mb-12">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa-solid fa-briefcase text-primary mr-3"></i>
+                        实习经历
+                    </h3>
+                    <div class="bg-white rounded-xl shadow-md p-6 resume-item">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h4 class="font-bold text-lg">北京深点视觉科技有限公司</h4>
+                            <span class="text-gray-500">5个月</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">算法工程师 实习生</p>
+                        <p class="text-gray-600">
+                            使用C++学习并编程设计了一些简单的UI界面，积累了基础的编程实践能力与技术落地经验。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 工作经历 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa-solid fa-suitcase text-primary mr-3"></i>
+                        工作经历
+                    </h3>
+                    <div class="bg-white rounded-xl shadow-md p-6 resume-item">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h4 class="font-bold text-lg">电商创业（合伙人）</h4>
+                            <span class="text-gray-500">2023 - 2025</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">淘宝/京东/拼多多 网店搭建与运营</p>
+                        <p class="text-gray-600 mb-3">
+                            业务早期独自承担开店、运营、客服、发货、售后等全流程工作，后续带领团队完成电商业务一体化搭建，涵盖品牌沟通、授权获取、产品入库、线上运营、物流对接、售后服务等环节。
+                        </p>
+                        <p class="text-gray-600 font-medium text-primary">
+                            核心成果：最高月GMV（商品总成交额）达到130W。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 技能与证书 -->
+    <section id="skills" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">技能与证书</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    展现个人专业技能、资质证书与额外能力储备
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- 证书卡片 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa-solid fa-certificate text-primary mr-3"></i>
+                        资质证书
+                    </h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">大学英语四级</h4>
+                                <p class="text-gray-600 text-sm">良好的听说读写能力，能快速浏览英语专业文件及书籍。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">普通话二级甲等</h4>
+                                <p class="text-gray-600 text-sm">具备标准、流畅的语言表达能力，便于日常沟通与工作协作。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 技能卡片 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa-solid fa-screwdriver-wrench text-primary mr-3"></i>
+                        掌握技能
+                    </h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">AI工具使用</h4>
+                                <p class="text-gray-600 text-sm">熟练使用Dify、Deepseek、豆包等AI软件；使用豆包搭建个人网站；使用Dify搭建AI电商客服。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">办公软件</h4>
+                                <p class="text-gray-600 text-sm">熟练运用Office各类办公应用，满足日常工作文档、表格、演示文稿等制作需求。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">额外储备</h4>
+                                <p class="text-gray-600 text-sm">系统自学过心理学全部基础课程，具备一定的用户心理洞察能力。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 个人风采（兴趣爱好+自我总结） -->
+    <section id="profile" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">个人风采</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    了解个人兴趣爱好与职业规划，展现更全面的个人形象
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- 兴趣爱好 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa-solid fa-heart text-primary mr-3"></i>
+                        兴趣爱好
+                    </h3>
+                    <div class="bg-white rounded-xl shadow-md p-6 space-y-6">
+                        <div>
+                            <h4 class="font-medium text-lg mb-2">旅游</h4>
+                            <p class="text-gray-600">
+                                长期保持旅游习惯，曾到访长沙、张家界、厦门、深圳、海南、广州、秦皇岛、武汉、青岛等地。具备较强探索精神和独立能力。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-lg mb-2">足球</h4>
+                            <p class="text-gray-600">
+                                长期与朋友踢球，多次参加院队比赛。培养了团结协作的能力，懂得团队目标下的分工与配合。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-lg mb-2">相声</h4>
+                            <p class="text-gray-600">
+                                大学期间多次在校级晚会（迎新晚会、一方有戏等）登台表演。培养了良好的表达与沟通能力，能够清晰传递观点。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 自我总结 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa-solid fa-comment-dots text-primary mr-3"></i>
+                        自我总结
+                    </h3>
+                    <div class="bg-white rounded-xl shadow-md p-6 text-gray-700 leading-relaxed">
+                        <p class="mb-4">
+                            在三年的创业过程中，我培养出了对市场的敏感度，对产品的判断力，对客户的服务态度，与团队伙伴的协作能力。但传统电商近些年市场份额日趋饱和，我个人的成长空间也陷入了瓶颈。
+                        </p>
+                        <p class="mb-4">
+                            好在我长期保持着跟踪前沿科技的习惯。自22年ChatGPT3.5发布起，我就在时刻关注AI并自主学习AI的使用。
+                        </p>
+                        <p class="font-medium text-primary">
+                            在判断出未来AI相关产业的发展前景后，决心将AI产品经理作为我未来10年的就业目标。我相信在电商行业面对市场的经验和自己大学工科的技术背景可以使我胜任AI产品经理的职位。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <iframe
+ src="https://udify.app/chatbot/AgBn6YeaSDiosaJH"
+ style="width: 100%; height: 100%; min-height: 700px"
+ frameborder="0"
+ allow="microphone">
+</iframe>
+
+    <!-- 7. 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <i class="fa-solid fa-user-circle text-primary text-2xl"></i>
+                    <span class="text-xl font-bold">朱怀策 - AI产品经理求职</span>
+                </div>
+                <p class="text-gray-400">
+                    具备工科背景与电商创业经验，深耕AI领域，期待与您携手共赢
+                </p>
+            </div>
+
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#home" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fa-solid fa-house text-xl"></i>
+                </a>
+                <a href="#resume" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fa-solid fa-file-text text-xl"></i>
+                </a>
+                <a href="#skills" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
+                </a>
+                <a href="#profile" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fa-solid fa-heart text-xl"></i>
+                </a>
+                <a href="#contact" class="text-gray-400 hover:text-primary transition-colors">
+                    <i class="fa-solid fa-phone text-xl"></i>
+                </a>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 2026 朱怀策 个人求职网站 | 求职意向：AI产品经理</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 8. 回到顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-colors opacity-0 invisible">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript 交互逻辑 -->
+    <script>
+        // 1. 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // 切换汉堡/关闭图标
+            const icon = menuBtn.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // 2. 导航栏滚动效果（滚动时改变背景和高度）
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('h-14', 'shadow');
+                navbar.classList.remove('h-16');
+            } else {
+                navbar.classList.add('h-16');
+                navbar.classList.remove('h-14', 'shadow');
+            }
+        });
+
+        // 3. 平滑滚动（锚点链接）
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // 关闭移动端菜单（如果打开）
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        const icon = menuBtn.querySelector('i');
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
+
+                    // 平滑滚动到目标元素
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // 偏移导航栏高度
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 4. 回到顶部按钮
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 5. 表单提交提示（前端模拟，无后端对接）
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('留言提交成功！招聘方将尽快与你取得联系（此为前端模拟效果）');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
