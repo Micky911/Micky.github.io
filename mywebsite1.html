@@ -270,7 +270,7 @@
                             <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
                             <div>
                                 <h4 class="font-medium">AI工具使用</h4>
-                                <p class="text-gray-600 text-sm">熟练使用Dify、Deepseek、豆包等AI软件；使用豆包搭建个人网站；使用Dify搭建AI电商客服。</p>
+                                <p class="text-gray-600 text-sm">熟练使用Dify、Deepseek、豆包等AI软件；使用豆包搭建个人网站；使用Dify搭建AI电商客服（下方可体验在线演示）。</p>
                             </div>
                         </li>
                         <li class="flex items-start">
@@ -354,12 +354,84 @@
         </div>
     </section>
 
-    <iframe
- src="https://udify.app/chatbot/AgBn6YeaSDiosaJH"
- style="width: 100%; height: 100%; min-height: 700px"
- frameborder="0"
- allow="microphone">
-</iframe>
+    <!-- 6. 联系我 -->
+    <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">联系我</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    如有面试邀约或合作意向，欢迎通过以下方式联系，或填写表单留言
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 联系方式汇总 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-6">快捷联系方式</h3>
+                    <ul class="space-y-6 text-gray-700">
+                        <li class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-phone text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">电话</h4>
+                                <p>15100087363</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-envelope text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">邮箱</h4>
+                                <p>1983466654@qq.com</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-weixin text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">微信</h4>
+                                <p>ZHC15100087363</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-location-dot text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">现居地</h4>
+                                <p>河北 邯郸</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 联系表单 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-6">留言表单</h3>
+                    <form id="contactForm">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">您的姓名</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="请输入您的姓名" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">联系电话</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="请输入您的联系电话" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">留言内容</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="请输入您的留言（如面试邀约、岗位咨询等）" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+                            发送留言 <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 7. 页脚 -->
     <footer class="bg-dark text-white py-12">
@@ -398,8 +470,8 @@
         </div>
     </footer>
 
-    <!-- 8. 回到顶部按钮 -->
-    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-colors opacity-0 invisible">
+    <!-- 8. 回到顶部按钮（微调位置避免与Dify聊天助手重叠） -->
+    <button id="backToTop" class="fixed bottom-20 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-colors opacity-0 invisible">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
@@ -486,5 +558,41 @@
             contactForm.reset();
         });
     </script>
+
+    <!-- ===== 嵌入Dify AI虚拟形象聊天助手（用户提供代码）===== -->
+    <script>
+     window.difyChatbotConfig = {
+      token: 'tbNBTxZ3sOaOjF6T',
+      inputs: {
+        // You can define the inputs from the Start node here
+        // key is the variable name
+        // e.g.
+        // name: "NAME"
+      },
+      systemVariables: {
+        // user_id: 'YOU CAN DEFINE USER ID HERE',
+        // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
+      },
+      userVariables: {
+        // avatar_url: 'YOU CAN DEFINE USER AVATAR URL HERE',
+        // name: 'YOU CAN DEFINE USER NAME HERE',
+      },
+     }
+    </script>
+    <script
+     src="https://udify.app/embed.min.js"
+     id="tbNBTxZ3sOaOjF6T"
+     defer>
+    </script>
+    <style>
+      #dify-chatbot-bubble-button {
+        background-color: #1C64F2 !important; /* 与网站主色接近，保持风格统一 */
+      }
+      #dify-chatbot-bubble-window {
+        width: 24rem !important;
+        height: 40rem !important;
+      }
+    </style>
+    <!-- ===== Dify聊天助手嵌入结束 ===== -->
 </body>
 </html>
