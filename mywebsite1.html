@@ -41,11 +41,15 @@
             .resume-item {
                 @apply border-l-4 border-primary pl-4 mb-8 last:mb-0;
             }
+            /* 视频容器自定义样式，保证响应式适配 */
+            .video-container {
+                @apply w-full mt-3 rounded-lg overflow-hidden border border-gray-200;
+            }
         }
     </style>
 </head>
 <body class="bg-light font-sans text-dark antialiased">
-    <!-- 1. 导航栏（固定顶部，响应式折叠）- 已删除联系我相关链接 -->
+    <!-- 1. 导航栏（固定顶部，响应式折叠） -->
     <header id="navbar" class="fixed w-full top-0 z-50 bg-white/95 shadow-sm transition-all duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -55,15 +59,13 @@
                     <span class="text-xl font-bold text-dark">朱怀策</span>
                 </a>
 
-                <!-- 桌面端导航链接 - 删除联系我 -->
+                <!-- 桌面端导航链接 -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link-active py-4 font-medium">首页</a>
                     <a href="#resume" class="py-4 font-medium text-gray-600 hover:text-primary transition-colors">简历详情</a>
                     <a href="#skills" class="py-4 font-medium text-gray-600 hover:text-primary transition-colors">技能证书</a>
                     <a href="#profile" class="py-4 font-medium text-gray-600 hover:text-primary transition-colors">个人风采</a>
                 </nav>
-
-                <!-- 桌面端按钮（邀约面试）- 随联系我模块删除 -->
 
                 <!-- 移动端汉堡菜单按钮 -->
                 <button id="menuBtn" class="md:hidden text-dark hover:text-primary transition-colors">
@@ -72,7 +74,7 @@
             </div>
         </div>
 
-        <!-- 移动端折叠导航菜单（默认隐藏）- 删除联系我相关选项 -->
+        <!-- 移动端折叠导航菜单（默认隐藏） -->
         <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-100">
             <div class="container mx-auto px-4 py-3 space-y-1">
                 <a href="#home" class="block py-3 px-2 rounded-lg bg-primary/5 text-primary font-medium">首页</a>
@@ -83,7 +85,7 @@
         </div>
     </header>
 
-    <!-- 2. 首页（个人简介横幅）- 删除联系我按钮 -->
+    <!-- 2. 首页（个人简介横幅） -->
     <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center gap-12">
@@ -213,7 +215,7 @@
         </div>
     </section>
 
-    <!-- 4. 技能与证书 - 已修改AI工具使用描述为蓝色字体 -->
+    <!-- 4. 技能与证书 - 已整合B站内嵌视频，且AI工具使用文本为蓝色 -->
     <section id="skills" class="py-16 md:py-24 bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -248,7 +250,7 @@
                     </ul>
                 </div>
 
-                <!-- 技能卡片 - 修改AI工具使用文本为蓝色 -->
+                <!-- 技能卡片 - 整合B站内嵌视频 -->
                 <div class="bg-white rounded-xl shadow-md p-6 card-hover">
                     <h3 class="text-xl font-bold mb-6 flex items-center">
                         <i class="fa-solid fa-screwdriver-wrench text-primary mr-3"></i>
@@ -257,10 +259,24 @@
                     <ul class="space-y-4 text-gray-700">
                         <li class="flex items-start">
                             <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
-                            <div>
+                            <div class="w-full">
                                 <h4 class="font-medium">AI工具使用</h4>
-                                <!-- 核心修改：添加text-primary类设置为蓝色字体 -->
+                                <!-- 蓝色字体文本 -->
                                 <p class="text-primary text-sm">熟练使用Dify、Deepseek、豆包等AI软件；使用豆包搭建个人网站；使用Dify搭建AI智能助手（下方可体验在线演示）。</p>
+                                <!-- 整合B站视频：添加自定义视频容器，做响应式优化 -->
+                                <div class="video-container">
+                                    <iframe 
+                                        src="//player.bilibili.com/player.html?isOutside=true&aid=115982907477119&bvid=BV1Ue6vB7EMF&cid=35704865825&p=1" 
+                                        scrolling="no" 
+                                        border="0" 
+                                        frameborder="no" 
+                                        framespacing="0" 
+                                        allowfullscreen="true"
+                                        class="w-full h-[200px] md:h-[250px]"
+                                    ></iframe>
+                                </div>
+                                <!-- 视频简短说明，提升招聘方观看意愿 -->
+                                <p class="text-gray-500 text-xs mt-2 text-center">演示时长：约1-3分钟 | 核心：AI智能助手功能落地</p>
                             </div>
                         </li>
                         <li class="flex items-start">
@@ -344,7 +360,7 @@
         </div>
     </section>
 
-    <!-- 7. 页脚 - 删除联系我相关图标链接 -->
+    <!-- 页脚 -->
     <footer class="bg-dark text-white py-12">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
@@ -378,12 +394,12 @@
         </div>
     </footer>
 
-    <!-- 8. 回到顶部按钮（微调位置避免与Dify聊天助手重叠） -->
+    <!-- 回到顶部按钮 -->
     <button id="backToTop" class="fixed bottom-20 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-colors opacity-0 invisible">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- JavaScript 交互逻辑 - 移除表单相关代码 -->
+    <!-- JavaScript 交互逻辑 -->
     <script>
         // 1. 移动端菜单切换
         const menuBtn = document.getElementById('menuBtn');
@@ -459,15 +475,13 @@
         });
     </script>
 
-    <!-- ===== 嵌入Dify AI虚拟形象聊天助手（用户提供代码）===== -->
+    <!-- ===== 嵌入Dify AI虚拟形象聊天助手 ===== -->
     <script>
      window.difyChatbotConfig = {
       token: 'tbNBTxZ3sOaOjF6T',
       inputs: {
         // You can define the inputs from the Start node here
         // key is the variable name
-        // e.g.
-        // name: "NAME"
       },
       systemVariables: {
         // user_id: 'YOU CAN DEFINE USER ID HERE',
@@ -486,7 +500,7 @@
     </script>
     <style>
       #dify-chatbot-bubble-button {
-        background-color: #1C64F2 !important; /* 与网站主色接近，保持风格统一 */
+        background-color: #1C64F2 !important;
       }
       #dify-chatbot-bubble-window {
         width: 24rem !important;
