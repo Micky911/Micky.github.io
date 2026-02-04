@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>朱怀策 - AI产品经理 个人求职网站</title>
+    <title>朱怀策 - AI电商运营 个人求职网站</title>
     <!-- 引入Tailwind CSS（CDN方式，无需本地安装） -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 引入Font Awesome图标（用于导航、按钮等） -->
@@ -41,6 +41,10 @@
             .resume-item {
                 @apply border-l-4 border-primary pl-4 mb-8 last:mb-0;
             }
+            /* 视频容器自定义样式，保证响应式适配 */
+            .video-container {
+                @apply w-full mt-3 rounded-lg overflow-hidden border border-gray-200;
+            }
         }
     </style>
 </head>
@@ -61,15 +65,7 @@
                     <a href="#resume" class="py-4 font-medium text-gray-600 hover:text-primary transition-colors">简历详情</a>
                     <a href="#skills" class="py-4 font-medium text-gray-600 hover:text-primary transition-colors">技能证书</a>
                     <a href="#profile" class="py-4 font-medium text-gray-600 hover:text-primary transition-colors">个人风采</a>
-                    <a href="#contact" class="py-4 font-medium text-gray-600 hover:text-primary transition-colors">联系我</a>
                 </nav>
-
-                <!-- 桌面端按钮（求职意向突出） -->
-                <div class="hidden md:flex">
-                    <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">
-                        邀约面试
-                    </a>
-                </div>
 
                 <!-- 移动端汉堡菜单按钮 -->
                 <button id="menuBtn" class="md:hidden text-dark hover:text-primary transition-colors">
@@ -85,8 +81,6 @@
                 <a href="#resume" class="block py-3 px-2 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors">简历详情</a>
                 <a href="#skills" class="block py-3 px-2 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors">技能证书</a>
                 <a href="#profile" class="block py-3 px-2 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors">个人风采</a>
-                <a href="#contact" class="block py-3 px-2 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors">联系我</a>
-                <a href="#contact" class="block py-3 px-2 rounded-lg bg-primary text-white mt-2">邀约面试</a>
             </div>
         </div>
     </header>
@@ -102,14 +96,11 @@
                     </h1>
                     <p class="text-gray-600 text-lg mb-8 max-w-lg mx-auto md:mx-0">
                         工科背景 + 3年电商创业经验 + 深耕AI领域2年<br>
-                        具备市场敏感度、产品判断力和团队协作能力，立志深耕AI产品领域10年
+                        具备市场敏感度、产品判断力和团队协作能力，立志深耕AI领域10年
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <div class="flex justify-center md:justify-start">
                         <a href="#resume" class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors">
                             查看完整简历 <i class="fa-solid fa-file-text ml-2"></i>
-                        </a>
-                        <a href="#contact" class="bg-white border border-gray-300 text-dark px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors">
-                            联系我 <i class="fa-solid fa-phone ml-2"></i>
                         </a>
                     </div>
                 </div>
@@ -216,7 +207,7 @@
                             业务早期独自承担开店、运营、客服、发货、售后等全流程工作，后续带领团队完成电商业务一体化搭建，涵盖品牌沟通、授权获取、产品入库、线上运营、物流对接、售后服务等环节。
                         </p>
                         <p class="text-gray-600 font-medium text-primary">
-                            核心成果：最高月GMV（商品总成交额）达到130W。
+                            核心成果：最高月GMV（商品总成交额）达到130W。与网易有道部门共同推出有道领世口袋学习宝。
                         </p>
                     </div>
                 </div>
@@ -224,7 +215,7 @@
         </div>
     </section>
 
-    <!-- 4. 技能与证书 -->
+    <!-- 4. 技能与证书 - 已整合B站内嵌视频，且AI工具使用文本为蓝色 -->
     <section id="skills" class="py-16 md:py-24 bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -259,7 +250,7 @@
                     </ul>
                 </div>
 
-                <!-- 技能卡片 -->
+                <!-- 技能卡片 - 整合B站内嵌视频 -->
                 <div class="bg-white rounded-xl shadow-md p-6 card-hover">
                     <h3 class="text-xl font-bold mb-6 flex items-center">
                         <i class="fa-solid fa-screwdriver-wrench text-primary mr-3"></i>
@@ -268,9 +259,24 @@
                     <ul class="space-y-4 text-gray-700">
                         <li class="flex items-start">
                             <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
-                            <div>
+                            <div class="w-full">
                                 <h4 class="font-medium">AI工具使用</h4>
-                                <p class="text-gray-600 text-sm">熟练使用Dify、Deepseek、豆包等AI软件；使用豆包搭建个人网站；使用Dify搭建AI电商客服。</p>
+                                <!-- 蓝色字体文本 -->
+                                <p class="text-primary text-sm">熟练使用Dify、Deepseek、豆包等AI软件；使用豆包搭建个人网站；使用Dify搭建AI智能助手（下方可体验在线演示）。</p>
+                                <!-- 整合B站视频：添加自定义视频容器，做响应式优化 -->
+                                <div class="video-container">
+                                    <iframe 
+                                        src="//player.bilibili.com/player.html?isOutside=true&aid=115982907477119&bvid=BV1Ue6vB7EMF&cid=35704865825&p=1" 
+                                        scrolling="no" 
+                                        border="0" 
+                                        frameborder="no" 
+                                        framespacing="0" 
+                                        allowfullscreen="true"
+                                        class="w-full h-[200px] md:h-[250px]"
+                                    ></iframe>
+                                </div>
+                                <!-- 视频简短说明，提升招聘方观看意愿 -->
+                                <p class="text-gray-500 text-xs mt-2 text-center">演示时长：约1-3分钟 | 核心：AI智能助手功能落地</p>
                             </div>
                         </li>
                         <li class="flex items-start">
@@ -340,13 +346,11 @@
                     </h3>
                     <div class="bg-white rounded-xl shadow-md p-6 text-gray-700 leading-relaxed">
                         <p class="mb-4">
-                            在三年的创业过程中，我培养出了对市场的敏感度，对产品的判断力，对客户的服务态度，与团队伙伴的协作能力。但传统电商近些年市场份额日趋饱和，我个人的成长空间也陷入了瓶颈。
+                            在三年的创业过程中 ，通过在淘宝、拼多多、京东的开店经历，养成了开店和运营的能力；通过和消费者的一线接触，我培养出了对市场的敏感度 ；通过分析不同产品的销售数据，养成了对产品的判断力 ；通过和大厂与品牌方的沟通，养成了和客户的沟通能力；通过组建与培养电商队伍，养成了领导与协调团队的能力。
                         </p>
                         <p class="mb-4">
-                            好在我长期保持着跟踪前沿科技的习惯。自22年ChatGPT3.5发布起，我就在时刻关注AI并自主学习AI的使用。
-                        </p>
-                        <p class="font-medium text-primary">
-                            在判断出未来AI相关产业的发展前景后，决心将AI产品经理作为我未来10年的就业目标。我相信在电商行业面对市场的经验和自己大学工科的技术背景可以使我胜任AI产品经理的职位。
+                            而在AI近些年对传统电商的冲击下，我时刻保持着自主学习AI技能的习惯。已经熟练掌握搭建ai智能客服，使用ai工具生成电商图片、视频等技能。我相信在这个不断学习的过程中依然可以保有我在电商运营岗位上的优势，并借助ai成为效率更高的新型电商运营。
+                      
                         </p>
                     </div>
                 </div>
@@ -354,86 +358,7 @@
         </div>
     </section>
 
-    <!-- 6. 联系我 -->
-    <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold mb-4">联系我</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    如有面试邀约或合作意向，欢迎通过以下方式联系，或填写表单留言
-                </p>
-            </div>
-
-            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- 联系方式汇总 -->
-                <div class="bg-white rounded-xl shadow-md p-6">
-                    <h3 class="text-xl font-bold mb-6">快捷联系方式</h3>
-                    <ul class="space-y-6 text-gray-700">
-                        <li class="flex items-center">
-                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fa-solid fa-phone text-primary text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium mb-1">电话</h4>
-                                <p>15100087363</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fa-solid fa-envelope text-primary text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium mb-1">邮箱</h4>
-                                <p>1983466654@qq.com</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fa-solid fa-weixin text-primary text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium mb-1">微信</h4>
-                                <p>ZHC15100087363</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fa-solid fa-location-dot text-primary text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium mb-1">现居地</h4>
-                                <p>河北 邯郸</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- 联系表单 -->
-                <div class="bg-white rounded-xl shadow-md p-6">
-                    <h3 class="text-xl font-bold mb-6">留言表单</h3>
-                    <form id="contactForm">
-                        <div class="mb-6">
-                            <label for="name" class="block text-gray-700 font-medium mb-2">您的姓名</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="请输入您的姓名" required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="phone" class="block text-gray-700 font-medium mb-2">联系电话</label>
-                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="请输入您的联系电话" required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-700 font-medium mb-2">留言内容</label>
-                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="请输入您的留言（如面试邀约、岗位咨询等）" required></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
-                            发送留言 <i class="fa-solid fa-paper-plane ml-2"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. 页脚 -->
+    <!-- 页脚 -->
     <footer class="bg-dark text-white py-12">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
@@ -459,9 +384,6 @@
                 <a href="#profile" class="text-gray-400 hover:text-primary transition-colors">
                     <i class="fa-solid fa-heart text-xl"></i>
                 </a>
-                <a href="#contact" class="text-gray-400 hover:text-primary transition-colors">
-                    <i class="fa-solid fa-phone text-xl"></i>
-                </a>
             </div>
 
             <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
@@ -470,8 +392,8 @@
         </div>
     </footer>
 
-    <!-- 8. 回到顶部按钮 -->
-    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-colors opacity-0 invisible">
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-20 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-colors opacity-0 invisible">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
@@ -549,48 +471,44 @@
                 behavior: 'smooth'
             });
         });
-
-        // 5. 表单提交提示（前端模拟，无后端对接）
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('留言提交成功！招聘方将尽快与你取得联系（此为前端模拟效果）');
-            contactForm.reset();
-        });
     </script>
+
+    <!-- ===== 嵌入Dify AI虚拟形象聊天助手 ===== -->
     <script>
- window.difyChatbotConfig = {
-  token: 'tbNBTxZ3sOaOjF6T',
-  inputs: {
-    // You can define the inputs from the Start node here
-    // key is the variable name
-    // e.g.
-    // name: "NAME"
-  },
-  systemVariables: {
-    // user_id: 'YOU CAN DEFINE USER ID HERE',
-    // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
-  },
-  userVariables: {
-    // avatar_url: 'YOU CAN DEFINE USER AVATAR URL HERE',
-    // name: 'YOU CAN DEFINE USER NAME HERE',
-  },
- }
-</script>
-<script
- src="https://udify.app/embed.min.js"
- id="tbNBTxZ3sOaOjF6T"
- defer>
-</script>
-<style>
-  #dify-chatbot-bubble-button {
-    background-color: #1C64F2 !important;
-  }
-  #dify-chatbot-bubble-window {
-    width: 24rem !important;
-    height: 40rem !important;
-  }
-</style>
+     window.difyChatbotConfig = {
+      token: 'tbNBTxZ3sOaOjF6T',
+      inputs: {
+        // You can define the inputs from the Start node here
+        // key is the variable name
+      },
+      systemVariables: {
+        // user_id: 'YOU CAN DEFINE USER ID HERE',
+        // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
+      },
+      userVariables: {
+        // avatar_url: 'YOU CAN DEFINE USER AVATAR URL HERE',
+        // name: 'YOU CAN DEFINE USER NAME HERE',
+      },
+     }
+    </script>
+    <script
+     src="https://udify.app/embed.min.js"
+     id="tbNBTxZ3sOaOjF6T"
+     defer>
+    </script>
+    <style>
+      #dify-chatbot-bubble-button {
+        background-color: #1C64F2 !important;
+      }
+      #dify-chatbot-bubble-window {
+        width: 24rem !important;
+        height: 40rem !important;
+      }
+    </style>
+    <!-- ===== Dify聊天助手嵌入结束 ===== -->
 </body>
+</html>
+
 
 </html>
+
