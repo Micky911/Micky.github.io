@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>朱怀策 | AI电商运营 个人求职网站</title>
+    <meta name="keywords" content="AI电商运营,电商运营,淘宝京东拼多多运营,跨境电商运营,AI提效,电商GMV运营,电商数据运营">
+    <meta name="description" content="朱怀策，3年电商全链路运营经验，精通AI赋能电商全流程提效，具备从0到1店铺搭建、GMV增长、精细化运营的完整实战能力">
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 自定义Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1377EB',
+                        secondary: '#0A2463',
+                        light: '#F0F7FF',
+                        dark: '#1E293B',
+                        accent: '#FF7D00',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+            .section-padding {
+                @apply py-16 md:py-24;
+            }
+            .container-custom {
+                @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-dark font-sans antialiased scroll-smooth">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div class="container-custom">
+            <nav class="flex items-center justify-between h-16 md:h-20">
+                <a href="#" class="text-xl md:text-2xl font-bold text-primary">
+                    朱怀策 | AI电商运营
+                </a>
+                <!-- 桌面端导航 -->
+                <ul class="hidden md:flex items-center space-x-8">
+                    <li><a href="#home" class="font-medium hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="#core-competence" class="font-medium hover:text-primary transition-colors">运营能力</a></li>
+                    <li><a href="#experience" class="font-medium hover:text-primary transition-colors">工作经历</a></li>
+                    <li><a href="#projects" class="font-medium hover:text-primary transition-colors">项目作品</a></li>
+                    <li><a href="#about" class="font-medium hover:text-primary transition-colors">关于我</a></li>
+                    <li><a href="#contact" class="font-medium hover:text-primary transition-colors">联系我</a></li>
+                </ul>
+                <!-- 移动端汉堡菜单 -->
+                <button id="menuBtn" class="md:hidden text-dark text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white shadow-md absolute w-full">
+            <div class="container-custom py-4">
+                <ul class="flex flex-col space-y-4">
+                    <li><a href="#home" class="block py-2 font-medium hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="#core-competence" class="block py-2 font-medium hover:text-primary transition-colors">运营能力</a></li>
+                    <li><a href="#experience" class="block py-2 font-medium hover:text-primary transition-colors">工作经历</a></li>
+                    <li><a href="#projects" class="block py-2 font-medium hover:text-primary transition-colors">项目作品</a></li>
+                    <li><a href="#about" class="block py-2 font-medium hover:text-primary transition-colors">关于我</a></li>
+                    <li><a href="#contact" class="block py-2 font-medium hover:text-primary transition-colors">联系我</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero首屏区域 精准匹配AI电商运营岗位 -->
+    <section id="home" class="pt-32 md:pt-40 pb-16 md:pb-24 bg-gradient-to-b from-light to-white">
+        <div class="container-custom">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="w-full md:w-2/3">
+                    <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-secondary leading-tight text-shadow mb-4">
+                        你好，我是<span class="text-primary">朱怀策</span>
+                        <br><span class="text-2xl md:text-3xl text-primary">AI电商运营专家</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl">
+                        3年电商全链路运营实战经验，精通AI工具赋能电商运营全流程提效，具备从0到1店铺搭建、GMV规模化增长、精细化运营的完整闭环能力，擅长用AI破解传统电商运营核心痛点
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-lg font-medium card-hover">
+                            联系我
+                        </a>
+                        <a href="#core-competence" class="border border-primary text-primary px-8 py-3 rounded-lg font-medium card-hover">
+                            查看运营能力
+                        </a>
+                    </div>
+                    <!-- 电商运营核心成果数据 -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12">
+                        <div class="text-center">
+                            <p class="text-3xl md:text-4xl font-bold text-primary mb-1">130W</p>
+                            <p class="text-gray-600 text-sm">月GMV峰值</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl md:text-4xl font-bold text-primary mb-1">28%</p>
+                            <p class="text-gray-600 text-sm">稳定用户复购率</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl md:text-4xl font-bold text-primary mb-1">1000倍</p>
+                            <p class="text-gray-600 text-sm">运营效率提升</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl md:text-4xl font-bold text-accent mb-1">3平台</p>
+                            <p class="text-gray-600 text-sm">多店铺操盘经验</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-tr from-primary to-blue-300 p-1 shadow-xl">
+                        <div class="w-full h-full rounded-full bg-white overflow-hidden flex items-center justify-center">
+                            <i class="fas fa-store text-8xl text-primary/70"></i>
+                            <!-- 可替换为个人头像：将上面的i标签替换为 <img src="头像链接" alt="朱怀策头像" class="w-full h-full object-cover"> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心运营能力模块 1:1匹配AI电商运营岗位核心要求 -->
+    <section id="core-competence" class="section-padding bg-white">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-secondary mb-4">AI电商运营核心能力</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">全覆盖电商运营全流程，精通AI工具赋能运营全环节，具备完整的从0到1运营操盘能力</p>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 能力1：电商全链路运营操盘 -->
+                <div class="bg-light rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fas fa-cart-shopping"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-4">电商全链路运营操盘</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>淘宝、京东、拼多多多平台店铺从0到1搭建与全流程运营</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>商品运营、选品定价、活动策划、流量运营、客服售后全闭环</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>头部品牌方授权合作与联名产品运营，具备成熟的供应链对接能力</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>2年内实现业务从0到月GMV130W突破，用户复购率稳定28%</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 能力2：AI赋能电商运营提效 -->
+                <div class="bg-light rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-4">AI赋能运营全流程提效</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>精通Claude、Cursor、Coze、Dify等主流AI工具，熟练调用LLM API</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>AI辅助选品定价、竞品分析、商品文案优化、批量上品全环节落地</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>独立开发AI智能客服助手，实现用户分层智能触达与售后自动化</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>搭建AI电商运营系统，核心运营工作效率提升1000倍，节省10倍人力</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 能力3：数据化运营与增长 -->
+                <div class="bg-light rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-4">数据化运营与增长</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>搭建电商全链路数据监测体系，覆盖流量、转化、复购、售后全维度</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>通过数据拆解运营问题，迭代优化运营策略，实现业务200%月增速</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>用户分层运营与生命周期管理，精准触达提升转化与复购率</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>沉淀标准化AI电商运营SOP，赋能团队规模化复制运营动作</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 能力4：跨境电商运营 -->
+                <div class="bg-light rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-4">跨境电商运营</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>跨境电商多站点一体化运营，覆盖商品上架、销售、发货、售后全流程</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>海外品牌商城数据爬取、多平台API对接、商品信息智能匹配</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>解决传统跨境电商运营效率低、管理能力缺失的核心痛点</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 能力5：团队与资源统筹 -->
+                <div class="bg-light rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-4">团队与资源统筹</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>电商团队从0到1搭建与管理，标准化运营流程与培训体系</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>网易有道、作业帮、学而思等头部品牌方商务合作与资源对接</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>跨部门协调推进运营项目落地，保障GMV目标按期达成</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 能力6：产品与技术底层能力 -->
+                <div class="bg-light rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-4">技术底层支撑</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>自动化本科技术背景，精通Python、Java等开发语言</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>独立完成微信小程序、Web App前端搭建，实现运营工具产品化</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span>具备算法前端开发经验，能深度对接技术团队实现运营需求落地</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作经历区域 重点突出电商运营实操与AI落地 -->
+    <section id="experience" class="section-padding bg-light">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-secondary mb-4">工作经历</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <!-- 时间线布局 -->
+            <div class="space-y-12">
+                <!-- 经历1：现任AI电商运营 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary">杭州御动科技有限公司</h3>
+                            <p class="text-primary font-medium">AI电商运营</p>
+                        </div>
+                        <p class="text-gray-500 font-medium">2026.02 - 至今</p>
+                    </div>
+                    <p class="text-gray-700 mb-4 font-medium">核心负责跨境电商全链路运营，通过AI工具搭建智能化运营体系，解决传统电商运营痛点，承担GMV、转化率、人效等核心运营指标</p>
+                    <ul class="space-y-3 text-gray-600 pl-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>制定AI驱动的电商运营策略，借助Claude等AI工具搭建后台管理系统，通过爬虫获取品牌商城数据，调用平台API完成商品匹配，实现多站点一体化运营</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>通过AI工具实现商品批量上架、智能客服、售后自动化，核心运营工作效率提升<span class="font-bold text-primary">1000倍</span>，节省近10倍人力成本，支撑业务次月实现<span class="font-bold text-primary">200%的规模增速</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>搭建全链路运营数据监测体系，实时跟踪流量、转化、复购等核心指标，通过数据复盘迭代运营策略，沉淀可复制的AI电商运营方法论</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>基于Vibe Coding开发模式，独立完成AI客服智能助手、Web App前端搭建，实现用户分层智能触达，提升用户咨询转化率与售后处理效率</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 经历2：电商业务负责人 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary">北京杰然东方科技有限公司</h3>
+                            <p class="text-primary font-medium">电商业务负责人</p>
+                        </div>
+                        <p class="text-gray-500 font-medium">2023.01 - 2025.12</p>
+                    </div>
+                    <p class="text-gray-700 mb-4 font-medium">全面负责多平台电商业务从0到1的搭建与运营操盘，制定整体运营策略，承担GMV、转化率、复购率等核心经营指标，带领团队实现业务规模化增长</p>
+                    <ul class="space-y-3 text-gray-600 pl-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>独立完成淘宝、京东、拼多多3个平台店铺从0到1搭建，全面负责店铺运营、选品定价、活动策划、流量运营、客服售后全流程工作，后续组建电商团队实现规模化运营</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>对接网易有道、作业帮、学而思等头部品牌方完成授权合作，联合推出联名产品，负责产品的全链路运营，沉淀了成熟的用户需求分析与运营解决方案能力</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>制定精细化运营策略，搭建用户分层运营体系，通过精准触达提升用户转化与复购，2年内实现业务从0到<span class="font-bold text-primary">月GMV130W</span>的突破，用户复购率稳定在<span class="font-bold text-primary">28%</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>搭建电商数据运营体系，每日/每周/每月进行数据复盘，拆解运营问题并优化策略，沉淀标准化的运营SOP，赋能团队提升整体运营效率</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 经历3：实习经历 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary">北京深点视觉科技有限公司</h3>
+                            <p class="text-primary font-medium">算法工程师实习生</p>
+                        </div>
+                        <p class="text-gray-500 font-medium">2022.02 - 2022.06</p>
+                    </div>
+                    <ul class="space-y-3 text-gray-600 pl-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>参与视觉算法项目的前端交互模块开发，使用C++设计实现了算法调试专用UI界面，沉淀了技术产品化的底层能力，为后续电商运营工具的开发与落地打下基础</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目作品区域 重点突出电商运营相关项目 -->
+    <section id="projects" class="section-padding bg-white">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-secondary mb-4">核心运营项目</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 项目1：AI电商后台管理系统 -->
+                <div class="bg-light rounded-2xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-primary to-blue-400 flex items-center justify-center text-white text-5xl">
+                        <i class="fas fa-gears"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-secondary mb-3">AI电商后台管理系统</h3>
+                        <p class="text-gray-600 mb-6">
+                            专为电商运营打造的全链路智能化管理系统，覆盖商品数据爬取、多平台API对接、批量上品、订单管理、销售发货、智能售后全流程数字化管理，解决传统电商运营效率低、多店铺管理难的核心痛点，实现电商运营全流程AI提效。
+                        </p>
+                        <div class="flex flex-wrap gap-3 mb-4">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">电商运营提效</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">多平台API对接</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">AI智能客服</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">跨境电商</span>
+                        </div>
+                        <a href="https://clinquant-praline-0ad9e5.netlify.app/" target="_blank" class="inline-flex items-center text-primary font-medium hover:underline">
+                            查看项目演示 <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 项目2：AI模拟面试微信小程序 -->
+                <div class="bg-light rounded-2xl overflow-hidden card-hover">
+                    <!-- 小程序码展示区域 -->
+                    <div class="h-auto bg-white flex items-center justify-center p-4">
+                        <img src="mini-qrcode.png" alt="AI模拟面试微信小程序码" class="max-w-full max-h-64 object-contain rounded-lg">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-secondary mb-3">AI模拟面试微信小程序</h3>
+                        <p class="text-gray-600 mb-6">
+                            基于LLM大模型独立开发的AI模拟面试工具，支持多岗位面试场景模拟、实时问答、面试点评与能力优化建议，完整覆盖需求分析、产品设计、技术开发、上线落地全流程，验证了AI产品从0到1的完整落地能力，可复用至电商AI客服、智能导购等运营场景。
+                        </p>
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">微信小程序</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">LLM API</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">AI对话交互</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">全流程落地</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我区域 -->
+    <section id="about" class="section-padding bg-light">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-secondary mb-4">关于我</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white rounded-2xl p-8 card-hover">
+                    <h3 class="text-xl font-bold text-secondary mb-6 flex items-center">
+                        <i class="fas fa-id-card text-primary mr-3"></i>基本信息
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-gray-500 w-24 shrink-0">姓名：</span>
+                            <span class="font-medium">朱怀策</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-500 w-24 shrink-0">现居地：</span>
+                            <span class="font-medium">浙江杭州</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-500 w-24 shrink-0">工作年限：</span>
+                            <span class="font-medium">3年电商运营经验</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-500 w-24 shrink-0">最高学历：</span>
+                            <span class="font-medium">本科 | 2022年6月毕业</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-500 w-24 shrink-0">联系电话：</span>
+                            <a href="tel:15100087363" class="font-medium text-primary hover:underline">15100087363</a>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-500 w-24 shrink-0">邮箱：</span>
+                            <a href="mailto:1983466654@qq.com" class="font-medium text-primary hover:underline">1983466654@qq.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl p-8 card-hover">
+                    <h3 class="text-xl font-bold text-secondary mb-6 flex items-center">
+                        <i class="fas fa-graduation-cap text-primary mr-3"></i>教育&证书
+                    </h3>
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-bold text-lg">厦门大学嘉庚学院</h4>
+                            <span class="text-sm text-gray-500">2018.09 - 2022.06</span>
+                        </div>
+                        <p class="text-gray-600 mb-2">自动化 | 全日制本科</p>
+                        <p class="text-sm text-gray-500">核心课程：自动控制原理、单片机、PLC、Python、C、Java等，具备扎实的技术底层能力，为AI电商运营提供技术支撑</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">证书与特长</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">大学英语四级</span>
+                            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">普通话二级甲等</span>
+                            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">电商全链路运营</span>
+                            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">AI工具应用</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式区域 -->
+    <section id="contact" class="section-padding bg-white">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-secondary mb-4">联系我</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    如果您认可我的AI电商运营能力，欢迎通过以下方式联系我，期待与您共同实现电商业务的规模化增长
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <a href="tel:15100087363" class="card-hover bg-light rounded-2xl p-8 text-center">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-2xl mx-auto mb-6">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-secondary mb-2">联系电话</h3>
+                    <p class="text-gray-600">15100087363</p>
+                </a>
+                <a href="mailto:1983466654@qq.com" class="card-hover bg-light rounded-2xl p-8 text-center">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-2xl mx-auto mb-6">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-secondary mb-2">电子邮箱</h3>
+                    <p class="text-gray-600">1983466654@qq.com</p>
+                </a>
+                <div class="card-hover bg-light rounded-2xl p-8 text-center">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-2xl mx-auto mb-6">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-secondary mb-2">现居地址</h3>
+                    <p class="text-gray-600">浙江杭州</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-secondary text-white py-8">
+        <div class="container-custom text-center">
+            <p class="mb-2 font-bold text-xl">朱怀策 | AI电商运营 个人求职网站</p>
+            <p class="text-white/70 text-sm">© 2024 All Rights Reserved. 专注AI赋能电商运营</p>
+        </div>
+    </footer>
+
+    <!-- JS交互 -->
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('bg-white/95');
+                navbar.classList.add('bg-white');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('bg-white/95');
+                navbar.classList.remove('bg-white');
+            }
+        });
+
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // 移动端菜单点击关闭
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
